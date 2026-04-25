@@ -2,9 +2,11 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
  
 resources:
-  - ../base/kustomization.yaml 
+- ../base/kustomization.yaml
 
 patchesStrategicMerge:
-  - deployment-patch.yaml
-  
- 
+- deployment-patch.yaml
+images:
+- name: sigstore-app
+  newName: docker.io/shilucloud/sigstore-app
+  newTag: main-33e6a878a8afb91000009e6785bdfb693cf782f3
