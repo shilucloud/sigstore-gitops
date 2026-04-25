@@ -9,6 +9,7 @@ images:
   newName: docker.io/shilucloud/sigstore-app
   newTag: main-33e6a878a8afb91000009e6785bdfb693cf782f3
 
-patches:
-  - path: deployment-patch.yaml
+replicas:
+  - name: sigstore-app
+    count: 1
 
