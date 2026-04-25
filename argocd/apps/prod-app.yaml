@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: myapp-prod
+  namespace: argocd
+  annotations:
+    notifications.argoproj.io/subscribe.on-sync-failed.slack: deployments
+
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/shilucloud/sigstore-gitops
+    targetRevision: main
+    path: apps/overlays/prod
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: sigstore-app-prod
+
+  syncPolicy:
+    automated:
+      prune: true          # remove resources deleted from git
+      selfHeal: true       # revert manual kubectl changes
+    syncOptions:
+      - CreateNamespace=true

@@ -1,0 +1,7 @@
+metadata:
+  labels:
+    environment: prod 
+
+spec:
+  replicas: 3
+

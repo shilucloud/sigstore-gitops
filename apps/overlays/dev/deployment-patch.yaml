@@ -1,0 +1,7 @@
+metadata:
+  labels:
+    environment: dev 
+
+spec:
+  replicas: 1 
+

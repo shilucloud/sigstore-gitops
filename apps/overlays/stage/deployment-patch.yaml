@@ -1,0 +1,7 @@
+metadata:
+  labels:
+    environment: stage 
+
+spec:
+  replicas: 2
+

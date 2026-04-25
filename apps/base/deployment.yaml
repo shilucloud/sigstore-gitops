@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sigstore-app
+  labels:
+    app: sigstore
+    
+spec:
+  selector:
+    matchLabels:
+      app: sigstore
+  template:
+    metadata:
+      labels:
+        app: sigstore
+    containers:
+      - name: sigstore-app
+        image: shilucloud/sigstore-app
+
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 10
+          periodSeconds: 30
+
+        resources:                   
+          requests:
+            cpu: 50m
+            memory: 32Mi
+          limits:
+            cpu: 100m
+            memory: 64Mi
+      
+
