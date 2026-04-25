@@ -1,7 +1,9 @@
+apiVersion: apps/v1
+kind: Deployment
 metadata:
+  name: sigstore-app  
   labels:
-    environment: prod 
+    environment: prod
 
 spec:
   replicas: 3
-
