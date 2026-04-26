@@ -7,7 +7,7 @@ resources:
 images:
 - name: shilucloud/sigstore-app
   newName: docker.io/shilucloud/sigstore-app
-  newTag: main-44c7492a9881b2bd83d79525b88c171ed4d93985
+  newTag: main-1a3edc82e7d3778badc02cb33f404dd8ea302372
 
 replicas:
 - count: 1
