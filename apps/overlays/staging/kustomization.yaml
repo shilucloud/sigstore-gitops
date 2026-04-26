@@ -11,3 +11,6 @@ images:
 - name: shilucloud/sigstore-app
   newName: docker.io/shilucloud/sigstore-app
   newTag: v0.0.2
+
+
+namespace: sigstore-app-staging
