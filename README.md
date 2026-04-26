@@ -1,4 +1,6 @@
 # sigstore-gitops
+![Pipeline Overview](.github/assets/sigstore-gitops-readme-image.png)
+
 
 GitOps repository for `sigstore-app`. Contains all Kubernetes manifests and ArgoCD application definitions. No application code lives here — only desired cluster state.
 
