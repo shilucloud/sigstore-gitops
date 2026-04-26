@@ -23,5 +23,3 @@ spec:
     automated:
       prune: true          # remove resources deleted from git
       selfHeal: true       # revert manual kubectl changes
-    syncOptions:
-      - CreateNamespace=true
