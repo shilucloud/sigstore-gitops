@@ -10,4 +10,4 @@ replicas:
 images:
 - name: shilucloud/sigstore-app
   newName: docker.io/shilucloud/sigstore-app
-  newTag: v0.0.1
+  newTag: v0.0.2
