@@ -7,4 +7,4 @@ metadata:
     app.kubernetes.io/instance: sigstore-app-staging
     app.kubernetes.io/managed-by: argocd
     app.kubernetes.io/component: namespace
-    policy.sigstore.dev/include: true
+    policy.sigstore.dev/include: "true"

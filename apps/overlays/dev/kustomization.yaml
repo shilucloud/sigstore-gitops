@@ -14,3 +14,4 @@ replicas:
 - count: 1
   name: sigstore-app
 
+namespace: sigstore-app-dev
