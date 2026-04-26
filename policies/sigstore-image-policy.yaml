@@ -1,7 +1,7 @@
 apiVersion: policy.sigstore.dev/v1beta1
 kind: ClusterImagePolicy
 metadata:
-  name: github-keyless-only
+  name: sigstore-app-github-keyless-only
 
 spec:
   mode: enforce

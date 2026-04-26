@@ -5,6 +5,7 @@ metadata:
   namespace: argocd
   annotations:
     notifications.argoproj.io/subscribe.on-sync-failed.slack: deployments
+    argo-cd.argoproj.io/sync-wave: "2"
 
 spec:
   project: default

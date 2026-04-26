@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: apps-of-apps
+  namespace: argocd
+
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/shilucloud/sigstore-gitops
+    targetRevision: main
+    path: argocd/apps/
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+
+  syncPolicy:
+    automated:
+      prune: true          # remove resources deleted from git
+      selfHeal: true       # revert manual kubectl changes
+    syncOptions:
+      - CreateNamespace=true
