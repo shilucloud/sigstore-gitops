@@ -12,7 +12,7 @@ spec:
   source:
     repoURL: https://github.com/shilucloud/sigstore-gitops
     targetRevision: main
-    path: apps/overlays/stage
+    path: apps/overlays/staging
 
   destination:
     server: https://kubernetes.default.svc
