@@ -2,17 +2,18 @@ apiVersion: policy.sigstore.dev/v1beta1
 kind: ClusterImagePolicy
 metadata:
   name: github-keyless-only
+
 spec:
   mode: enforce
 
   images:
-  - glob: "docker.io/shilucloud/sigstore-app*"
+    - glob: "index.docker.io/shilucloud/sigstore-app*"
 
   authorities:
-  - name: github-actions
-    keyless:
-      url: https://fulcio.sigstore.dev
+    - name: github-actions
+      keyless:
+        url: https://fulcio.sigstore.dev
 
-      identities:
-      - issuer: https://token.actions.githubusercontent.com
-        subject: repo:shilucloud/sigstore-app:ref:refs/heads/main
+        identities:
+          - issuer: https://token.actions.githubusercontent.com
+            subject: https://github.com/shilucloud/sigstore-app/.github/workflows/main.yaml@refs/heads/main
