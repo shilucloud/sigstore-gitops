@@ -2,14 +2,16 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-  - ../../base/
+- ../../base/
 
 images:
 - name: shilucloud/sigstore-app
   newName: docker.io/shilucloud/sigstore-app
   newTag: main-33e6a878a8afb91000009e6785bdfb693cf782f3
+- name: sigstore-app
+  newName: docker.io/shilucloud/sigstore-app
+  newTag: main-a18155b7594a425b0a3204bd97bf98a68b87ffe6
 
 replicas:
-  - name: sigstore-app
-    count: 1
-
+- count: 1
+  name: sigstore-app
