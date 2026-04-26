@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: myapp-stage
+  name: sigstore-staging
   namespace: argocd
   annotations:
     notifications.argoproj.io/subscribe.on-sync-failed.slack: deployments
@@ -17,7 +17,7 @@ spec:
 
   destination:
     server: https://kubernetes.default.svc
-    namespace: sigstore-app-stage
+    namespace: sigstore-app-staging
 
   syncPolicy:
     automated:
